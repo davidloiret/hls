@@ -39,7 +39,7 @@ func Segment(cfg HLSConfig) error {
 	//TODO improve the way we create the folder
 	os.Mkdir(cfg.FileBase, 0777)
 
-	C.av_register_all()
+	// C.av_register_all()
 
 	sourceFile := C.CString(cfg.SourceFile)
 	defer C.free(unsafe.Pointer(sourceFile))

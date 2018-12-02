@@ -34,42 +34,41 @@ typedef enum {
 typedef struct {
     AVFormatContext          *output;
     AVBitStreamFilterContext *bfilter;
-    
+
     char            *buf;
     size_t          buf_size;
-    
+
     char            *file_base_name, *media_base_name;
     const char      *extension;
-    
-    
+
+
     AVStream        *video, *audio;
     int             source_video_index, source_audio_index;
-    
+
     unsigned int    segment_file_sequence;
     unsigned int    segment_sequence;
     unsigned int    segment_index;
     double          segment_duration;
-    
+
     double          duration;
     double          target_duration;
     double          max_duration;
-    
+
     double          *durations;
     size_t          durations_size;
-    
+
     double          avg_bitrate;
     double          max_bitrate;
-    
+
     int64_t         _pts;
     int64_t         _dts;
-    
+
     int             eof;
-    
+
 } SegmenterContext;
 
-
 int  segmenter_alloc_context(SegmenterContext**);
-int  segmenter_init(SegmenterContext *context, AVFormatContext *source, char* file_base_name, char* media_base_name, 
+int  segmenter_init(SegmenterContext *context, AVFormatContext *source, char* file_base_name, char* media_base_name,
                         double target_duration, int media_filter);
 
 int  segmenter_open(SegmenterContext*);

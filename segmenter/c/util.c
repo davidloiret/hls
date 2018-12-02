@@ -20,9 +20,8 @@
 
 char *sg_strerror(int error) {
     char* errstr = NULL;
-    int err = error * -1;
-    
-    switch (err) {
+
+    switch (error) {
         case SGERROR_MEM_ALLOC:
             errstr = "can't allocate memory";
             break;

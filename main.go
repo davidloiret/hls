@@ -1,7 +1,7 @@
 package main
 
 import "fmt"
-import "github.com/snickers/hls/segmenter"
+import "github.com/davidloiret/hls/segmenter"
 
 func main() {
 	myCfg := segmenter.HLSConfig{
